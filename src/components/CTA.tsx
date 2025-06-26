@@ -1,4 +1,6 @@
 
+import { Star } from 'lucide-react';
+
 const CTA = () => {
   return (
     <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
