@@ -1,9 +1,9 @@
-
 "use client";
 
 import { useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { Hero3DScene } from "./hero-3d-scene";
 
 const Hero2 = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -125,15 +125,11 @@ const Hero2 = () => {
             </button>
           </div>
 
+          {/* 3D Scene replacing the image */}
           <div className="relative mx-auto my-20 w-full max-w-6xl">
-            <div className="absolute inset-0 rounded shadow-lg bg-white blur-[10rem] bg-grainy opacity-20" />
-
-            {/* Hero Image */}
-            <img
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=700"
-              alt="ARPK AI Website Builder Interface"
-              className="relative w-full h-auto shadow-md grayscale-100 rounded"
-            />
+            <div className="absolute inset-0 rounded-2xl shadow-2xl bg-gradient-to-b from-purple-900/20 to-blue-900/20 blur-3xl opacity-60" />
+            <Hero3DScene className="relative rounded-2xl overflow-hidden border border-white/10 backdrop-blur-sm bg-black/20" />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
