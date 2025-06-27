@@ -1,9 +1,17 @@
 
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home, User, Briefcase, FileText } from 'lucide-react';
+import { NavBar } from '@/components/ui/tubelight-navbar';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = [
+    { name: 'Features', url: '#features', icon: Home },
+    { name: 'Pricing', url: '#pricing', icon: User },
+    { name: 'About', url: '#about', icon: Briefcase },
+    { name: 'Contact', url: '#contact', icon: FileText }
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
@@ -16,22 +24,9 @@ const Navbar = () => {
             </h1>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <a href="#features" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Features
-              </a>
-              <a href="#pricing" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Pricing
-              </a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                About
-              </a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Contact
-              </a>
-            </div>
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:block flex-1 flex justify-center">
+            <NavBar items={navItems} />
           </div>
 
           {/* Desktop CTA */}
